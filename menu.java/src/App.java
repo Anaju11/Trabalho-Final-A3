@@ -1,14 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Seja Bem vindo!");
-        ArrayList<Animais> listaDeAnimais = new ArrayList<>();
+
+        // Carrega dados do arquivo
+        ArrayList<Animais> listaDeAnimais = GravadorDeAnimais.carregar("animais.txt");
+        
+        // Atualiza o contador com base nos dados carregados
+        int idCounter = listaDeAnimais.stream().mapToInt(Animais::getId).max().orElse(0) + 1;
+        
         Scanner scanner = new Scanner(System.in);
         int opcao;
-        int idCounter = 1;
-
         do {
             System.out.println("1. Criar novo registro");
             System.out.println("2. Listar todos os registros");
@@ -35,6 +38,7 @@ public class App {
 
                     Animais novoAnimal = new Animais(idCounter++, nome,especie,idade,peso);
                         listaDeAnimais.add(novoAnimal);
+                        GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
                         System.out.println("Animal foi registrado.");
                     break;
 
@@ -44,6 +48,7 @@ public class App {
                         System.out.println ("Nenhum animal registrado.");
                     } else {
                         for (Animais a : listaDeAnimais) {
+                            GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
                             System.out.println(a);
                         }
                     }
@@ -74,6 +79,7 @@ public class App {
                     Animais animalEditar = null;
                         for (Animais a : listaDeAnimais) {
                             if (a.getId() == idEditar) {
+                                GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
                                 animalEditar = a;
                                 break;
                             }
@@ -105,6 +111,7 @@ public class App {
                             if (listaDeAnimais.get(i).getId() == idExcluir) {
                                 listaDeAnimais.remove(i);
                                 remover = true;
+                                GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
                                 System.out.println("O animal foi removido.");
                                 break;
                             }
