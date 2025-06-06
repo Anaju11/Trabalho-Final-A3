@@ -1,0 +1,4 @@
+1,Ana,NIck,Cachorro,16,10.0,Banho e Tosa
+2,ANA,BOB,CACHORRO,12,10.0,BANHO
+3,A,B,C,1,2.0,A
+4,A,B,C,10000,1.0,B

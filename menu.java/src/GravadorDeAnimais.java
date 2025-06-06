@@ -5,11 +5,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class GravadorDeAnimais {
-   // Método para salvar os dados em um arquivo
+
+    // Método para salvar os dados em um arquivo
     public static void salvar(ArrayList<Animais> lista, String nomeArquivo) {
         try (FileWriter gravador = new FileWriter(nomeArquivo)) {
             for (Animais a : lista) {
-                gravador.write(a.toString() + "\n");
+                gravador.write(a.getId() + "," +
+                               a.getNomeTutor() + "," +
+                               a.getNome() + "," +
+                               a.getEspecie() + "," +
+                               a.getIdade() + "," +
+                               a.getPeso() + "," +
+                               a.getAtendimento() + "\n");
             }
         } catch (IOException e) {
             System.out.println("Erro ao salvar os dados.");
@@ -25,14 +32,16 @@ public class GravadorDeAnimais {
             String linha;
             while ((linha = leitor.readLine()) != null) {
                 String[] partes = linha.split(",");
-                if (partes.length == 5) {
+                if (partes.length == 7) {
                     int id = Integer.parseInt(partes[0]);
-                    String nome = partes[1];
-                    String especie = partes[2];
-                    int idade = Integer.parseInt(partes[3]);
-                    double peso = Double.parseDouble(partes[4]);
+                    String nomeTutor = partes[1];
+                    String nome = partes[2];
+                    String especie = partes[3];
+                    int idade = Integer.parseInt(partes[4]);
+                    double peso = Double.parseDouble(partes[5]);
+                    String atendimento = partes[6];
 
-                    Animais a = new Animais(id, nome, especie, idade, peso);
+                    Animais a = new Animais(id, nomeTutor, nome, especie, idade, peso, atendimento);
                     lista.add(a);
                 }
             }
@@ -43,4 +52,3 @@ public class GravadorDeAnimais {
         return lista;
     }
 }
-

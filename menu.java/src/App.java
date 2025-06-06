@@ -2,12 +2,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Seja Bem vindo!");
+        System.out.println("=======================================");
+        System.out.println("      Bem-vindo ao Pet Shop!");
+        System.out.println("=======================================");
+        System.out.println("Gerencie os pets cadastrados no sistema.");
+        System.out.println("Digite o número da opção desejada:");
+
 
         // Carrega dados do arquivo
         ArrayList<Animais> listaDeAnimais = GravadorDeAnimais.carregar("animais.txt");
         
-        // Atualiza o contador com base nos dados carregados
+        // Atualiza o contador 
         int idCounter = listaDeAnimais.stream().mapToInt(Animais::getId).max().orElse(0) + 1;
         
         Scanner scanner = new Scanner(System.in);
@@ -25,34 +30,70 @@ public class App {
             scanner.nextLine(); 
 
             switch(opcao) {
-                case 1:
-                    // Criar
-                    System.out.print("Nome: ");
-                    String nome = scanner.nextLine();
-                    System.out.print("Especie: ");
-                    String especie = scanner.nextLine();
-                    System.out.print("Idade: ");
-                    int idade = scanner.nextInt();
-                    System.out.print("Peso ");
-                    double peso = scanner.nextDouble();
+               case 1:
+    String nomeTutor;
+    do {
+        System.out.print("Nome do Tutor: ");
+        nomeTutor = scanner.nextLine();
+        if (nomeTutor.trim().isEmpty()) {
+            System.out.println("Erro: o nome do tutor não pode estar vazio.");
+        }
+    } while (nomeTutor.trim().isEmpty());
 
-                    Animais novoAnimal = new Animais(idCounter++, nome,especie,idade,peso);
-                        listaDeAnimais.add(novoAnimal);
-                        GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
-                        System.out.println("Animal foi registrado.");
-                    break;
+    String nome;
+    do {
+        System.out.print("Nome do pet: ");
+        nome = scanner.nextLine();
+        if (nome.trim().isEmpty()) {
+            System.out.println("Erro: o nome do pet não pode estar vazio.");
+        }
+    } while (nome.trim().isEmpty());
 
-                case 2:
-                    // Lista
-                    if (listaDeAnimais.isEmpty()) {
-                        System.out.println ("Nenhum animal registrado.");
-                    } else {
-                        for (Animais a : listaDeAnimais) {
-                            GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
-                            System.out.println(a);
-                        }
-                    }
-                    break;
+    System.out.print("Espécie: ");
+    String especie = scanner.nextLine();
+
+    int idade;
+    do {
+        System.out.print("Idade: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Erro: idade deve ser um número inteiro.");
+            scanner.next(); 
+        }
+        idade = scanner.nextInt();
+        if (idade < 0 || idade > 100) {
+            System.out.println("Erro: idade deve estar entre 0 e 100.");
+        }
+    } while (idade < 0 || idade > 100);
+
+    double peso;
+    do {
+        System.out.print("Peso: ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Erro: peso deve ser um número.");
+            scanner.next(); 
+        }
+        peso = scanner.nextDouble();
+        if (peso <= 0) {
+            System.out.println("Erro: peso deve ser maior que 0.");
+        }
+    } while (peso <= 0);
+
+    scanner.nextLine(); // limpa quebra de linha
+
+    String atendimento;
+    do {
+        System.out.print("Descrição do atendimento: ");
+        atendimento = scanner.nextLine();
+        if (atendimento.trim().isEmpty()) {
+            System.out.println("Erro: a descrição do atendimento não pode estar vazia.");
+        }
+    } while (atendimento.trim().isEmpty());
+
+    Animais novoAnimal = new Animais(idCounter++, nomeTutor, nome, especie, idade, peso, atendimento);
+    listaDeAnimais.add(novoAnimal);
+    GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
+    System.out.println("Animal foi registrado.");
+    break;
 
                 case 3:
                     // Busca
@@ -86,6 +127,8 @@ public class App {
                         }
 
                         if (animalEditar != null) {
+                             System.out.println("Novo nome do Tutor (" + animalEditar.getNomeTutor() + "): ");
+                             animalEditar.setNomeTutor(scanner.nextLine());
                             System.out.println("Novo nome (" + animalEditar.getNome()+ "): ");
                             animalEditar.setNome(scanner.nextLine());
                              System.out.println("Nova espécie (" + animalEditar.getEspecie()+ "): ");
@@ -94,6 +137,9 @@ public class App {
                             animalEditar.setIdade(scanner.nextInt());
                              System.out.println("Novo peso(" + animalEditar.getPeso()+ "): ");
                             animalEditar.setPeso(scanner.nextDouble());
+                            scanner.nextLine(); // ← LIMPA o ENTER pendente
+                            System.out.println("Nova Descrição (" + animalEditar.getAtendimento() + "): ");
+                            animalEditar.setAtendimento(scanner.nextLine());
 
                             System.out.println("Regitro atualizado.");
 
