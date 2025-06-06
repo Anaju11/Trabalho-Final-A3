@@ -1,4 +1,4 @@
-## Projeto Animais  em Java
+# Projeto Animais  em Java
 
 Este projeto em **Java** tem como objetivo representar e gerenciar informações sobre diferentes tipos de animais utilizando os principios da Programção Orientada Objetos (POO).
 
