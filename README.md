@@ -1,10 +1,10 @@
 # Sistema de Gerenciamento de Animais - Pet Shop
 
-Este projeto em **Java** tem como objetivo representar e gerenciar informações sobre diferentes tipos de animais utilizando os princípios da Programção Orientada Objetos (POO).
+Este projeto em **Java** tem como objetivo representar e gerenciar informações sobre diferentes tipos de animais utilizando os princípios da Programação Orientada Objetos (POO).
 
 ## Objetivo
 
-Demonstrar o uso de classe,herança,polimorfismo e encapsulamento em Java através da modelagem de um sistema simples.
+Demonstrar o uso de classe, herança, polimorfismo e encapsulamento em Java através da modelagem de um sistema simples.
  
  ## Funcionalidades
  
@@ -14,7 +14,7 @@ Demonstrar o uso de classe,herança,polimorfismo e encapsulamento em Java atrav�
 -Edição dos dados de um animal.
 - Exclusão de registros.
 - Persistência dos dados em arquivo `.txt`.
-- Validações de entrada(Campo não pode estar vazio, Idade deve estar entre 0 e 100, idade deve ser número inteiro e peso deve ser um número maior que 0)
+- Validações de entrada(Campos não podem estar vazios, Idade deve estar entre 0 e 100, idade deve ser número inteiro e peso deve ser um número maior que 0)
 
 ##  Tecnologias Utilizadas
 -Java
