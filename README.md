@@ -8,10 +8,10 @@ Demonstrar o uso de classe, herança, polimorfismo e encapsulamento em Java atra
  
  ## Funcionalidades
  
--Cadastro de novo animal.
--Listagem de todos os animais registrados.
--Busca por ID do animal.
--Edição dos dados de um animal.
+- Cadastro de novo animal.
+- Listagem de todos os animais registrados.
+- Busca por ID do animal.
+- Edição dos dados de um animal.
 - Exclusão de registros.
 - Persistência dos dados em arquivo `.txt`.
 - Validações de entrada(Campos não podem estar vazios, Idade deve estar entre 0 e 100, idade deve ser número inteiro e peso deve ser um número maior que 0)
@@ -32,7 +32,14 @@ Demonstrar o uso de classe, herança, polimorfismo e encapsulamento em Java atra
 
 ## Documento em Markdonw com a apresentação da entidade e justificativa: 
 Encontra-se na Wiki do GitHub.
-
+## Passos para usar o projeto
+- Clonar o repositório
+git clone https://github.com/Anaju11/Trabalho-Final-A3.git
+cd Trabalho-Final-A3
+- Compilar o código
+- Executar o programa
+java App
+- O menu interativo será exibido para gerenciar os registros dos animais.
 ## Colaboradores:
 - Gabriela Falcão Penna Campos Abreu - RA: 12311964
 - Ana Júlia Cota Brum - RA: 124222016
