@@ -14,15 +14,17 @@ Demostrar o uso de classe,herança,polimorfismo e encapsulamento em Java atravé
 -Listagem dos animais cadastrados 
 -Interface gráfica (opcional) ou execução via console 
 
-##  Tecnologias Usadas
+## 📚 Referências
 
-- **Java 17+** — Linguagem de programação principal, focada em POO para o desenvolvimento do sistema.
-- **Visual Studio Code** — Editor de código leve e versátil, com extensões específicas para Java.
-- **Extension Pack for Java (VS Code)** — Conjunto de extensões para suporte completo a Java, incluindo debugger, linting, IntelliSense.
-- **Git** — Controle de versão para gerenciamento e histórico do código-fonte.
-- **Terminal integrado do VS Code** — Para compilar e executar o projeto diretamente do editor.
-- **(Opcional) Biblioteca Gson** — Para manipulação e persistência de dados em JSON (caso futuramente seja implementada).
-- **JDK (Java Development Kit)** — Ambiente de desenvolvimento Java instalado na máquina.
+- [Documentação Oficial do Java](https://docs.oracle.com/en/java/)
+- [Tutorial de Programação Orientada a Objetos em Java - Alura](https://www.alura.com.br/artigos/programacao-orientada-a-objetos-java)
+- [Guia do Visual Studio Code para Java](https://code.visualstudio.com/docs/languages/java)
+- [Java Platform, Standard Edition - Oracle](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- [Gson – Biblioteca Java para manipulação de JSON](https://github.com/google/gson)
+- [Shields.io – Criador de Badges para GitHub](https://shields.io/)
+- Livro: *“Effective Java”* – Joshua Bloch
+- Curso: *“Java Programming Masterclass”* – Udemy (https://www.udemy.com/course/java-the-complete-java-developer-course/)
+
 
 
 
