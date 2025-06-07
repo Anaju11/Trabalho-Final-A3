@@ -14,16 +14,7 @@ Demostrar o uso de classe,herança,polimorfismo e encapsulamento em Java atravé
 -Listagem dos animais cadastrados 
 -Interface gráfica (opcional) ou execução via console 
 
-## 📚 Referências
 
-- [Documentação Oficial do Java](https://docs.oracle.com/en/java/)
-- [Tutorial de Programação Orientada a Objetos em Java - Alura](https://www.alura.com.br/artigos/programacao-orientada-a-objetos-java)
-- [Guia do Visual Studio Code para Java](https://code.visualstudio.com/docs/languages/java)
-- [Java Platform, Standard Edition - Oracle](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-- [Gson – Biblioteca Java para manipulação de JSON](https://github.com/google/gson)
-- [Shields.io – Criador de Badges para GitHub](https://shields.io/)
-- Livro: *“Effective Java”* – Joshua Bloch
-- Curso: *“Java Programming Masterclass”* – Udemy (https://www.udemy.com/course/java-the-complete-java-developer-course/)
 
 
 
