@@ -94,7 +94,15 @@ public class App {
     GravadorDeAnimais.salvar(listaDeAnimais, "animais.txt");
     System.out.println("Animal foi registrado.");
     break;
-
+    case 2:
+    if (listaDeAnimais.isEmpty()) {
+        System.out.println("Nenhum animal registrado.");
+    } else {
+        for (Animais a : listaDeAnimais) {
+            System.out.println(a);
+        }
+    }
+    break;
                 case 3:
                     // Busca
                     System.out.print("Digite o ID do animal: ");
