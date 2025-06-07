@@ -4,7 +4,7 @@ Este projeto em **Java** tem como objetivo representar e gerenciar informações
 
 ## Objetivo
 
-Demostrar o uso de classe ,herança,polimorfismo e encapsulamento em Java através  da modelagem de um  sistema simples de animais .
+Demostrar o uso de classe,herança,polimorfismo e encapsulamento em Java através da modelagem de um sistema simples de animais .
  
  ## Funcionalidades
 
@@ -13,6 +13,9 @@ Demostrar o uso de classe ,herança,polimorfismo e encapsulamento em Java atrav�
 -Método polimórfico para o som do animal (`emitirSom()`)
 -Listagem dos animais cadastrados 
 -Interface gráfica (opcional) ou execução via console 
+
+
+
 
 
 
